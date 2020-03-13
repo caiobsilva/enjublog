@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+
+  get "/articles", to: "articles#index"
+
   get 'welcome/index'
+
+  resources :articles
 
   root 'welcome#index'
 
