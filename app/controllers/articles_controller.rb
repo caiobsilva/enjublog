@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
 
   def create
@@ -15,10 +16,10 @@ class ArticlesController < ApplicationController
 
     if @article.save
       flash[:success] = 'Artigo criado com sucesso'
-      redirect_to article_path(@article)
+      redirect_to @article
     else
       flash[:error] = 'Criação de artigo falhou'
-      render 'edit'
+      render 'new'
     end
   end
 
