@@ -1,3 +1,113 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+    font-family: sans-serif;
+
+    width: 640px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2em;
+    height: 0.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: normal;
+    height: 1em;
+}
+
+a {
+    text-decoration: none;
+    text-align: right;
+}
+
+.new {
+    height: 1.5em;
+}
+
+.option {
+    align-content: right;
+}
+
+table {
+    margin-top: 10px;
+}
+
+.artigo .title {
+    margin-top: 1em;
+    font-weight: bold;
+    height: 0;
+    display: inline-block;
+}
+
+.artigo .text {
+    display: block;/* or inline-block */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.2em;
+}
+
+.artigo .option {
+    display: inline-block;
+    padding-left: 5px;
+    float: right;
+}
+
+.form_field {
+    font-size: 1em;
+    width: 100%;
+    border: solid;
+    border-width: thin;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.form_text {
+    width: 100%;
+    padding: 2px;
+    padding-bottom: 150px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: solid;
+    border-width: thin;
+}
+
+.form_button {
+    width: 15%;
+    background: white;
+    border-radius: 5px;
+    border: solid;
+    border-width: thin;
+    float: right;
+}
+
+.form_button:hover {
+    cursor: pointer;
+}
+
+.error_explanation {
+    /*text-align: center;
+
+    border-style: solid;
+    border-width: thin;
+    border-color: red;
+    border-radius: 5px;
+    padding: 5px;*/
+    color: red;
+}
+
+.error_explanation p {
+    margin: 0;
+    padding: 0;
+}
+
+.field_with_errors {
+    border-color: red;
+}

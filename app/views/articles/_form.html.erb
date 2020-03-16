@@ -3,31 +3,31 @@
     <!-- Rails automatically wraps fields that contain an error with a div with class field_with_errors. You can define a CSS rule to make them standout. -->
 
   <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+    <div class = "error_explanation">
+      <p>por favor, preencha todos os campos adequadamente.</p>
+
+      <!--
+      <%= pluralize(@article.errors.count, "erro") %> impediram que esse arquivo fosse salvo:
+      
+      <% @article.errors.full_messages.each do |msg| %>
+        <p><%= msg %><p>
+      <% end %>
+      -->
     </div>
   <% end %>
 
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :title, "título", :class => "form_label" %>
+    <%= form.text_field :title, :class => "form_field" %>
   </p>
 
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :text, "texto", :class => "form_label" %><br>
+    <%= form.text_area :text, :class => "form_text" %>
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit "enviar", :class => "form_button" %>
   </p>
 
 <% end %>
