@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.where(deleted_at: nil)
   end
 
   def show
@@ -35,6 +35,13 @@ class ArticlesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.update(deleted_at: DateTime.now)
+  
+    redirect_to articles_path
   end
 
   private
