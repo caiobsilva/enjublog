@@ -17,7 +17,7 @@ services:
     env_file: ./config/sample.env
     build: .
     ports:
-      - "8080:3000"
+      - "3000:3000"
     depends_on:
       - db
     
