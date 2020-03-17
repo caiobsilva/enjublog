@@ -1,28 +1,24 @@
 version: '3.3'
 
-volumes:
-  db-data:
-    external: false
-
 services:
   db:
+    container_name: postgres
     environment:
-      POSTGRES_DB: blog
+      POSTGRES_DB: blog_development
       POSTGRES_USER: caio
       POSTGRES_PASSWORD: caio
       DB_PORT: 5432
-      DB_DATABASE: blog_development
-    image: postgres:12.2
-    volumes:
-      - db-data:/usr/local/pgsql/data
+      DB_DATABASE: articles
+    image: postgres:10.12
 
   app:
+    command: /enjublog/entrypoint.sh
+    container_name: app
     env_file: ./config/sample.env
     build: .
-    volumes:
-      - .:/usr/src/app
     ports:
-      - "8080:8080"
-      - "5432:5432"
+      - "8080:3000"
     depends_on:
       - db
+    
+
