@@ -11,4 +11,4 @@ Por padrão, a página utliza Ruby on Rails conectado a um banco de dados Postgr
 * Webpacker 4.0
 
 ## inicialização
-Antes de inicializar o servidor rails, atualize os pacotes de dependências com o comando *yarn install --check-files*
+A aplicação está containerizada. A forma mais conveniente de rodá-la é através do Docker Compose, conectando-se por padrão à porta local 3000.
